@@ -9,13 +9,13 @@ A simple django service http://www.giantbob.com/api/search API.
 ## Features
 Use below end point to search and filter a game query:
 - Search for a game using:  
-  GET /v1/games/{game_name}
+  GET /v1/games/{game_query}
 - Add Filters on the result:  
-  GET /v1/games/{game_name}?limit={resultsPerPage}&page={pageIndex}&format=json
+  GET /v1/games/{game_query}?limit={resultsPerPage}&page={pageIndex}&format=json
 - Select Fields to retrieve:
-  GET /v1/games/{game_name}?fields=field1,field2,field3
+  GET /v1/games/{game_query}?fields=field1,field2,field3
 - Choose the format of output
-- GET /v1/games/{game_name}?format=json
+- GET /v1/games/{game_query}?format=json
 
 ## Setup
 1. Clone the repository  
