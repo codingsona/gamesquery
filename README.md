@@ -16,9 +16,12 @@ Use below end point to search and filter a game query:
   GET /v1/games/{game_name}?fields=field1,field2,field3
 
 ## Setup
-1. Clone the repository
-2. Get API key from www.giantbomb.com/api
-3. Start the docker service and then issue the below command:
+1. Clone the repository  
+   git clone https://github.com/codingsona/gamesquery.git  
+2. Get API key from www.giantbomb.com/api and configure .env file under project root  
+3. Create a new python virtual environment and activate it. Once activated, install the required python modules manually:  
+   pip install -r requirements.txt
+5. Alternatively, Start the docker service and then issue the below command:  
    docker-compose up --build
 
 
