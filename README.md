@@ -7,7 +7,7 @@ A simple django service http://www.giantbob.com/api/search API.
 - Default Fields: "id, name, date_added, api_detail_url, number_of_user_reviews"
 
 ## Features
-Use below examples to search and filter a game:
+Use below end point to search and filter a game query:
 - Search for a game using:  
   GET /v1/games/{game_name}
 - Add Filters on the result:  
