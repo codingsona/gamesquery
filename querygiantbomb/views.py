@@ -22,10 +22,12 @@ def home(request):
         GET /v1/games/{game_query}
         GET /v1/games/{game_query}?limit={resultsPerPage}&page={pageIndex}&format=json
         GET /v1/games/{game_query}?fields=field1,field2,field3
+        GET /v1/games/{game_query}?format-=json&fields=field1,field2,field3
     \nExamples: (curl, http) \n
         http://34.220.37.66:8000/v1/games/poke
         http://34.220.37.66:8000/v1/games/poke?limit=2&page=2
         http://34.220.37.66:8000/v1/games/poke?limit=2&page=2&fields=id,aliases,description
+        http://34.220.37.66:8000/v1/games/poke?format=json&limit=2&page=2&fields=id,aliases,description
     \nNote: \n
         Default Filters: "limit=5, page=0, offset=0"
         Default Fields: "id, name, date_added, api_detail_url, number_of_user_reviews"
@@ -44,13 +46,15 @@ def home(request):
 class GameSearch(APIView):
     """
     Search a Game: \n
-        GET /v1/games/{game_name}
-        GET /v1/games/{game_name}?limit={resultsPerPage}&page={pageIndex}&format=json
-        GET /v1/games/{game_name}?fields=field1,field2,field3
-    \nExamples (curl, http): \n
+        GET /v1/games/{game_query}
+        GET /v1/games/{game_query}?limit={resultsPerPage}&page={pageIndex}&format=json
+        GET /v1/games/{game_query}?fields=field1,field2,field3
+        GET /v1/games/{game_query}?format-=json&fields=field1,field2,field3
+    \nExamples: (curl, http) \n
         http://34.220.37.66:8000/v1/games/poke
         http://34.220.37.66:8000/v1/games/poke?limit=2&page=2
         http://34.220.37.66:8000/v1/games/poke?limit=2&page=2&fields=id,aliases,description
+        http://34.220.37.66:8000/v1/games/poke?format=json&limit=2&page=2&fields=id,aliases,description
     \nNote: \n
         Default Filters: "limit=5, page=0, offset=0"
         Default Fields: "id, name, date_added, api_detail_url, number_of_user_reviews"
