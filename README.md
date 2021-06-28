@@ -16,13 +16,18 @@ Use below examples to search and filter a game:
   GET /v1/games/{game_name}?fields=field1,field2,field3
 
 ## Setup
+1. Clone the repository
+2. Get API key from www.giantbomb.com/api
+3. Start the docker service and then issue the below command:
+   docker-compose up --build
 
-## Examples
+
+## Examples (use curl or browser)
 - http://127.0.0.1:8000/v1/games/poke
 - http://127.0.0.1:8000/v1/games/poke?limit=2&page=2
 - http://127.0.0.1:8000/v1/games/poke?limit=2&page=2&fields=id,aliases,description
 
-![image](https://user-images.githubusercontent.com/59982549/123672712-82b7ae80-d7f4-11eb-96ba-990f7ac72092.png)
+![image](https://user-images.githubusercontent.com/59982549/123673093-ec37bd00-d7f4-11eb-969a-25d33cbbd95e.png)
 
 
 
