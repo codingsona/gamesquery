@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+  gamesquery:
+      build: .
+      environment:
+        - GIANTBOMB_API_KEY=${GIANTBOMB_API_KEY}
+      volumes:
+        - ./app:/app
+      ports:
+        - 8000:80
+      container_name: gamesquery
