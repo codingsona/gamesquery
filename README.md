@@ -14,6 +14,8 @@ Use below end point to search and filter a game query:
   GET /v1/games/{game_name}?limit={resultsPerPage}&page={pageIndex}&format=json
 - Select Fields to retrieve:
   GET /v1/games/{game_name}?fields=field1,field2,field3
+- Choose the format of output
+- GET /v1/games/{game_name}?format=json
 
 ## Setup
 1. Clone the repository  
