@@ -30,7 +30,7 @@ Use below end point to search and filter a game query:
 - http://127.0.0.1:8000/v1/games/poke?limit=2&page=2
 - http://127.0.0.1:8000/v1/games/poke?limit=2&page=2&fields=id,aliases,description
 
-![image](https://user-images.githubusercontent.com/59982549/123673093-ec37bd00-d7f4-11eb-969a-25d33cbbd95e.png)
+![image](https://user-images.githubusercontent.com/59982549/123687404-be0ea900-d805-11eb-8574-c964679471ba.png)
 
 
 
