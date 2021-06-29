@@ -4,9 +4,11 @@ services:
       build: .
       environment:
         - GIANTBOMB_API_KEY=${GIANTBOMB_API_KEY}
-      command: python manage.py runserver 0.0.0.0:8000
+      command: python manage.py runserver 0:8000
       volumes:
-        - ./app:/app
+        - .:/code
+      expose:
+        - "8000"
       ports:
-        - "8000:80"
+        - "8000:8000"
       container_name: gamesquery

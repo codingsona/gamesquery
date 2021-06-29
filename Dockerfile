@@ -2,9 +2,10 @@ FROM python:3
 LABEL author="SD"
 
 ENV PYTHONUNBUFFERED=1
-ENV DOCKERHOME=/tmp/app
-WORKDIR $DOCKERHOME
-COPY requirements.txt $WORKDIR
+ENV DOCKERHOME=/code
+WORKDIR /code
+COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-COPY . $DOCKERHOME
-RUN python manage.py migrate
+COPY . /code/
+# not manadatory to run for this app
+#RUN python manage.py migrate
