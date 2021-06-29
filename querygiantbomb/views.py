@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from django.shortcuts import redirect
+from django.http import HttpResponse, HttpResponseNotFound
 from gamesquery import settings
 from querygiantbomb.apps import GiantBombApi
 from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer, AdminRenderer
@@ -10,9 +11,10 @@ from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer, AdminRe
 
 def bad_request(request, exception=None):
     """
-    Redirect bad request to home view
+    Handle bad requests
     """
-    return redirect(reverse('home'))
+    return HttpResponseNotFound("404: Bad Request, resource not found")
+    #return redirect(reverse('home'))
 
 
 @api_view(('GET',))
