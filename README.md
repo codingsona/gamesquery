@@ -20,10 +20,17 @@ Use below end point to search and filter a game query:
 ## Setup
 1. Clone the repository  
    git clone https://github.com/codingsona/gamesquery.git  
-2. Get API key from www.giantbomb.com/api and configure .env file under project root  
-3. Create a new python virtual environment and activate it. Once activated, install the required python modules manually:  
-   pip install -r requirements.txt
-5. Alternatively, Start the docker service and then issue the below command:  
+2. Get API key from www.giantbomb.com/api and configure .env file under project root directory gamesquery.   
+   contents of .env file:
+   GIANTBOMB_API_KEY='YOUR_API_KEY'  
+3. To start manually, use steps 4 and 5. To start via docker, use step 6.
+4. Create a new python virtual environment. Activate the virtual env and install the required python modules manually:  
+   python -m venv myvenv  
+   source myenv/bin/activate  
+   pip install -r requirements.txt  
+5. Execute below commands to start the application:  
+   python manage.py runserver 0.0.0.0:8000  
+6. Start the docker service and then issue the below command:  
    docker-compose up --build
 
 
