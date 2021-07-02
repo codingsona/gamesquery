@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 import requests
+from django.http import HttpResponseNotFound
 
 class QuerygiantbombConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -20,7 +21,7 @@ class GiantBombApi:
             'api_key': self.api_key,
             'format': 'json',
             'limit': 5,
-            'page': 0,
+            'page': 1,
             'offset': 0,
             'field_list': "id,name,date_added,api_detail_url,number_of_user_reviews"
         }
@@ -42,11 +43,10 @@ class GiantBombApi:
 
         return response.json()
 
-    def search(self, query, filters):
+    def search(self, filters):
         url_path = 'search/'
         parameters = {
-            'resources': 'game',
-            'query': query,
+            'resources': 'game'
         }
 
         # apply filters to parameters
@@ -58,4 +58,5 @@ class GiantBombApi:
             del (parameters["fields"])
 
         results = self.perform_request(url_path, parameters)
+
         return results
