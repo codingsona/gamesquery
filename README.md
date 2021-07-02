@@ -1,6 +1,6 @@
 # Game Search Service
 
-A simple django web service to search for games. The service can be accessed by curl or browser. The service renders the result in json, browsable api and admin formats. An example service has been deployed to AWS and can be accessed via http://34.220.37.66:8000/v1/games/{game_query}. Replace {game_query} with a query of your choice. The AWS service is available only temporarily. Please follow the Setup steps to set your own service. It utilizes http://www.giantbob.com/api/search API as backend.
+A simple django web service to search for games. The service can be accessed by curl or browser. The service renders the result in json, browsable api and admin formats. An example service has been deployed to AWS and can be accessed via http://34.220.37.66:8000/v1/games?query={game_query}. Replace {game_query} with a query of your choice. The AWS service is available only temporarily. Please follow the Setup steps to set your own service. It utilizes http://www.giantbob.com/api/search API as backend.
 
 - Technology Stack: Python, Django Rest Framework, Docker
 - Default Filters: "limit=5, page=0, offset=0"
@@ -9,13 +9,13 @@ A simple django web service to search for games. The service can be accessed by 
 ## Features
 Use below end point to search and filter a game query:
 - Search for a game using:  
-  GET /v1/games/{game_query}
+  GET /v1/games?query={game_query}
 - Add Filters on the result:  
-  GET /v1/games/{game_query}?limit={resultsPerPage}&page={pageIndex}&format=json
+  GET /v1/games?query={game_query}?limit={resultsPerPage}&page={pageIndex}&format=json
 - Select Fields to retrieve:
-  GET /v1/games/{game_query}?fields=field1,field2,field3
+  GET /v1/games?query={game_query}?fields=field1,field2,field3
 - Choose the format of output
-- GET /v1/games/{game_query}?format=json
+- GET /v1/games?query={game_query}?format=json
 
 ## Setup
 1. Clone the repository  
@@ -35,9 +35,9 @@ Use below end point to search and filter a game query:
 
 
 ## Examples (use curl or browser)
-- http://34.220.37.66:8000/v1/games/poke
-- http://34.220.37.66:8000/v1/games/poke?limit=2&page=2
-- http://34.220.37.66:8000/v1/games/poke?limit=2&page=2&fields=id,aliases,description
+- http://34.220.37.66:8000/v1/games?query=poke
+- http://34.220.37.66:8000/v1/games?query=poke?limit=2&page=2
+- http://34.220.37.66:8000/v1/games?query=poke?limit=2&page=2&fields=id,aliases,description
 
 ![image](https://user-images.githubusercontent.com/59982549/123736563-2d13ee00-d856-11eb-8886-88bd9a256ca3.png)
 
